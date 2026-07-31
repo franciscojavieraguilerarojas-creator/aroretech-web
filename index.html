@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A&R OreTech | Consultoría & Soluciones Mineras</title>
+    <!-- Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --azul-principal: #0B2545;
+            --azul-oscuro: #061528;
+            --cobre-bronce: #B87333;
+            --cobre-hover: #965B27;
+            --gris-fondo: #F4F6F9;
+            --texto-oscuro: #1A202C;
+            --texto-suave: #4A5568;
+            --blanco: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--texto-oscuro);
+            background-color: var(--blanco);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* --- NAVEGACIÓN --- */
+        nav {
+            background-color: var(--blanco);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 20px;
+        }
+
+        /* LOGO ESTRUCTURA HORIZONTAL AGRANDADO */
+        .logo-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo-header img {
+            height: 75px; /* Aumentado de 52px a 75px */
+            width: auto;
+            display: block;
+        }
+
+        .logo-text-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .logo-title {
+            font-size: 1.8em; /* Aumentado para acompañar el logo */
+            font-weight: 800;
+            color: var(--azul-principal);
+            letter-spacing: 0.5px;
+            line-height: 1;
+        }
+
+        .logo-title span {
+            color: var(--cobre-bronce);
+        }
+
+        .logo-subtitle {
+            font-size: 0.72em; /* Aumentado para mayor legibilidad */
+            font-weight: 700;
+            color: var(--cobre-bronce);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--texto-oscuro);
+            font-weight: 600;
+            font-size: 0.95em;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--cobre-bronce);
+        }
+
+        .btn-nav {
+            background-color: var(--azul-principal);
+            color: var(--blanco) !important;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s !important;
+        }
+
+        .btn-nav:hover {
+            background-color: var(--cobre-bronce) !important;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul-principal) 100%);
+            color: var(--blanco);
+            padding: 90px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.8em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            color: #CBD5E0;
+            margin-bottom: 35px;
+            font-weight: 300;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background-color: var(--cobre-bronce);
+            color: var(--blanco);
+            padding: 14px 32px;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 6px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--cobre-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            border: 2px solid var(--blanco);
+            color: var(--blanco);
+            padding: 12px 28px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        /* --- MÉTRICAS --- */
+        .metrics {
+            background-color: var(--blanco);
+            padding: 40px 20px;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .metrics-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .metric-card h3 {
+            font-size: 2em;
+            color: var(--cobre-bronce);
+            margin-bottom: 5px;
+        }
+
+        .metric-card p {
+            font-size: 0.9em;
+            color: var(--texto-suave);
+            font-weight: 600;
+        }
+
+        /* --- SECCIONES GENERALES --- */
+        .section-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2em;
+            color: var(--azul-principal);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--texto-suave);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- SERVICIOS --- */
+        .servicios-bg {
+            background-color: var(--gris-fondo);
+        }
+
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .servicio-card {
+            background-color: var(--blanco);
+            padding: 35px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            border-top: 4px solid var(--azul-principal);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .servicio-card:hover {
+            transform: translateY(-5px);
+            border-top-color: var(--cobre-bronce);
+        }
+
+        .servicio-card h3 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            color: var(--azul-principal);
+        }
+
+        .servicio-card p {
+            color: var(--texto-suave);
+            font-size: 0.95em;
+        }
+
+        /* --- NOSOTROS --- */
+        .nosotros-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nosotros-text p {
+            margin-bottom: 15px;
+            color: var(--texto-suave);
+        }
+
+        .nosotros-box {
+            background-color: var(--azul-principal);
+            color: var(--blanco);
+            padding: 40px;
+            border-radius: 8px;
+            border-left: 6px solid var(--cobre-bronce);
+        }
+
+        .nosotros-box h3 {
+            color: var(--blanco);
+            margin-bottom: 15px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--azul-oscuro);
+            color: var(--blanco);
+            padding: 60px 20px 20px 20px;
+        }
+
+        .footer-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--cobre-bronce);
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+
+        .footer-col p, .footer-col a {
+            color: #A0AEC0;
+            text-decoration: none;
+            margin-bottom: 10px;
+            display: block;
+            font-size: 0.95em;
+        }
+
+        .footer-col a:hover {
+            color: var(--blanco);
+        }
+
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding-top: 20px;
+            border-top: 1px solid #2D3748;
+            text-align: center;
+            font-size: 0.85em;
+            color: #718096;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2em; }
+            .nosotros-content { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .logo-header img { height: 55px; }
+            .logo-title { font-size: 1.3em; }
+            .logo-subtitle { font-size: 0.55em; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navegación Superior -->
+    <nav>
+        <div class="nav-container">
+            <a href="#inicio" class="logo-header">
+                <img src="logo.png" alt="A&R OreTech Logo">
+                <div class="logo-text-box">
+                    <div class="logo-title">A&R <span>ORETECH</span></div>
+                    <div class="logo-subtitle">Ingeniería • Metalurgia • Operaciones</div>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="mailto:contacto@aroretech.cl" class="btn-nav">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header Principal (Hero) -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Ingeniería y Operaciones Mineras de Alto Valor</h1>
+            <p>Optimización de procesos metalúrgicos, estandarización de operaciones en terreno y consultoría técnica especializada para la minería en Chile.</p>
+            <div class="hero-buttons">
+                <a href="#servicios" class="btn-primary">Nuestros Servicios</a>
+                <a href="mailto:contacto@aroretech.cl" class="btn-secondary">Solicitar Cotización</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tarjetas de Impacto -->
+    <section class="metrics">
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <h3>QA / QC</h3>
+                <p>Rigurosidad Contable y Protocolos</p>
+            </div>
+            <div class="metric-card">
+                <h3>100%</h3>
+                <p>Soporte Técnico Especializado</p>
+            </div>
+            <div class="metric-card">
+                <h3>Chile</h3>
+                <p>Cobertura Macrozona Norte</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Servicios -->
+    <section class="servicios-bg" id="servicios">
+        <div class="section-container">
+            <div class="section-title">
+                <h2>Servicios Integrales de Ingeniería</h2>
+                <p>Soluciones personalizadas adaptadas a las exigencias operacionales y de costos de cada proyecto.</p>
+            </div>
+
+            <div class="servicios-grid">
+                
+                <div class="servicio-card">
+                    <h3>Pruebas Metalúrgicas & Caracterización</h3>
+                    <p>Diseño, ejecución y evaluación de campañas de lixiviación (columnas/reactores) y flotación. Gestión con laboratorios externos y balances de masa.</p>
+                </div>
+
+                <div class="servicio-card">
+                    <h3>Estandarización & Procedimientos</h3>
+                    <p>Elaboración de Procedimientos Escritos de Trabajo Seguro (PETS/SOPT), instructivos operacionales, manuales de planta y aseguramiento de calidad (QA/QC).</p>
+                </div>
+
+                <div class="servicio-card">
+                    <h3>Ingeniería de Procesos & Optimización</h3>
+                    <p>Diagnóstico de circuitos operacionales, modelamiento de procesos, control de pérdidas y optimización de reactivos/agua en plantas concentradoras e hidrometalúrgicas.</p>
+                </div>
+
+                <div class="servicio-card">
+                    <h3>Operaciones & Supervisión en Faena</h3>
+                    <p>Soporte técnico directo en terreno, control operacional de turnos, cubicación y supervisión de movimiento de minerales e insumos.</p>
+                </div>
+
+                <div class="servicio-card">
+                    <h3>Consultoría Técnica & Informes Ejecutivos</h3>
+                    <p>Redacción de informes técnicos formales de desempeño, diagnóstico de procesos y evaluación operacional para directorios, entidades fiscalizadoras e inversionistas.</p>
+                </div>
+
+                <div class="servicio-card">
+                    <h3>Soporte Metalúrgico Digital</h3>
+                    <p>Análisis de datos operacionales mediante herramientas avanzadas para la toma de decisiones basada en información histórica de faena.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Sobre Nosotros -->
+    <section class="section-container" id="nosotros">
+        <div class="nosotros-content">
+            <div class="nosotros-text">
+                <h2 style="color: var(--azul-principal); margin-bottom: 20px;">Rigurosidad Técnica Aplicada a Faena</h2>
+                <p>En <strong>A&R OreTech</strong> combinamos el análisis analítico de la ingeniería de procesos con la experiencia operativa directa en terreno.</p>
+                <p>Nos enfocamos en resolver cuellos de botella reales en procesos de conminución, flotación y lixiviación, garantizando procedimientos estandarizados que protegen la seguridad del personal y mejoran los indicadores metálicos.</p>
+            </div>
+            <div class="nosotros-box">
+                <h3>Nuestra Misión</h3>
+                <p>Proporcionar a las operaciones mineras soluciones técnicas pragmáticas y sostenibles, alineadas con los más altos estándares de la industria nacional.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de Página -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4 style="color:var(--blanco);">A&R OreTech</h4>
+                <p>Consultora de Ingeniería, Metalurgia y Operaciones Mineras.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Cobertura</h4>
+                <p>📍 Región de Coquimbo</p>
+                <p>📍 Región de Atacama</p>
+                <p>📍 Región de Antofagasta</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contacto Directo</h4>
+                <a href="mailto:contacto@aroretech.cl">✉️ contacto@aroretech.cl</a>
+                <p>🌐 www.aroretech.cl</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 A&R OreTech. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
